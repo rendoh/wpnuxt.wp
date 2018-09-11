@@ -37,3 +37,9 @@ function get_page_title() {
   $page_title = wp_get_document_title();
   return $page_title;
 }
+
+// Allow anonymous comments
+function filter_rest_allow_anonymous_comments() {
+    return true;
+}
+add_filter('rest_allow_anonymous_comments','filter_rest_allow_anonymous_comments');
